@@ -1,7 +1,7 @@
 Flask==2.0.1
 itsdangerous==2.0.1
-Jinja2==3.0.1
-Keras-Preprocessing==1.1.2
+Jinja2
+Keras-Preprocessing
 matplotlib==3.4.0
 matplotlib-inline==0.1.2
 MarkupSafe==2.0.1
@@ -11,7 +11,7 @@ scipy==1.6.2
 sklearn==0.0
 streamlit==0.73.1
 tensorboard==2.4.1
-tensorboard-plugin-wit==1.8.0
+tensorboard-plugin-wit
 tensorflow==2.4.1
 tensorflow-estimator==2.4.0
 Werkzeug==2.0.1

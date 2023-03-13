@@ -3,11 +3,6 @@ $(document).ready(function () {
     $('.image-section').hide();
     $('.loader').hide();
     $('#result').hide();
-	$('#result1').hide();
-	
-	
-	
-	
 
     // Upload Preview
     function readURL(input) {
@@ -26,17 +21,12 @@ $(document).ready(function () {
         $('#btn-predict').show();
         $('#result').text('');
         $('#result').hide();
-		$('#result1').text('');
-        $('#result1').hide();
-		
         readURL(this);
     });
 
     // Predict
     $('#btn-predict').click(function () {
         var form_data = new FormData($('#upload-file')[0]);
-		
-	
 
         // Show loading animation
         $(this).hide();
@@ -51,19 +41,14 @@ $(document).ready(function () {
             cache: false,
             processData: false,
             async: true,
-            success: function (data,data1) {
+            success: function (data) {
                 // Get and display the result
                 $('.loader').hide();
                 $('#result').fadeIn(600);
-                $('#result').text(' Result:  ' + data);
-				console.log('success')
-				
-               
-			
-				
+                $('#result').text(data);
+                console.log('Success!');
             },
         });
-		
     });
 
 });
