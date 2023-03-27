@@ -5,7 +5,7 @@
       <excludeFolder url="file://$MODULE_DIR$/venu" />
       <excludeFolder url="file://$MODULE_DIR$/venv" />
     </content>
-    <orderEntry type="jdk" jdkName="Python 3.8 (Leaf_disease_ditection)" jdkType="Python SDK" />
+    <orderEntry type="jdk" jdkName="Python 3.7 (Trafiic_sign_prediction_with_voice)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
 </module>

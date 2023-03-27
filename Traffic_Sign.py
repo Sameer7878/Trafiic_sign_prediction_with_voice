@@ -5,8 +5,19 @@ from tensorflow.keras.models import load_model
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
 import numpy as np
 from PIL import Image
-
+import threading
+import pyttsx3
 # initialize the TTS engine
+ # volume (0 to 1)
+# initialize the TTS engine
+def say(text):
+    engine = pyttsx3.init()
+
+    # set properties for the engine
+    engine.setProperty('rate', 150)  # speed of speech (words per minute)
+    engine.setProperty('volume', 0.9)
+    engine.say(text)
+    engine.runAndWait()
 app = Flask(__name__)
 # Classes of trafic signs
 classes = { 1:'Speed limit (20km/h)',
@@ -83,7 +94,7 @@ def upload():
         f.save(file_path)
         # Make prediction
         result = image_processing(file_path)
-        print(result)
+        threading.Thread(target=say, args=(result,)).start()
         result = "Predicted Traffic🚦Sign is: " + result
         os.remove(file_path)
         return result
@@ -92,4 +103,4 @@ def upload():
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True,host='0.0.0.0',port=80) 

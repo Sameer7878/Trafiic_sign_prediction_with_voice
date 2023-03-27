@@ -25,7 +25,8 @@ $(document).ready(function () {
     });
 
     // Predict
-    $('#btn-predict').click(function () {
+
+    document.getElementById("imageUpload").onchange=function () {
         var form_data = new FormData($('#upload-file')[0]);
 
         // Show loading animation
@@ -49,6 +50,6 @@ $(document).ready(function () {
                 console.log('Success!');
             },
         });
-    });
+    };
 
 });
